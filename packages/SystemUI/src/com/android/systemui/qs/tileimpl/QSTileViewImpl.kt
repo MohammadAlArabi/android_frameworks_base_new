@@ -180,7 +180,7 @@ constructor(
         Utils.getColorAttrDefaultColor(context, R.attr.outline)
 
     // QS Style 2
-    private val colorActiveAlpha = Utils.applyAlpha(ACTIVE_ALPHA, Utils.getColorAttrDefaultColor(context, com.android.internal.R.attr.colorAccent))
+    private val colorActiveAlpha = Utils.applyAlpha(ACTIVE_ALPHA, Utils.getColorAttrDefaultColor(context, R.attr.shadeActive))
     private val colorInactiveAlpha = resources.getColor(R.color.qs_translucent_bg)
 
     // QS Style 3
