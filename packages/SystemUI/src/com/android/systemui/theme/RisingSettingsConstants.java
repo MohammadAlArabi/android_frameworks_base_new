@@ -37,6 +37,7 @@ public class RisingSettingsConstants {
     public static final String LOCKSCREEN_WIDGETS_ENABLED = "lockscreen_widgets_enabled";
     public static final String LOCKSCREEN_WIDGETS = "lockscreen_widgets";
     public static final String LOCKSCREEN_WIDGETS_EXTRAS = "lockscreen_widgets_extras";
+    public static final String QS_WIDGETS_ENABLED = "qs_widgets_enabled";
 
     public static final String[] SYSTEM_SETTINGS_KEYS = {
         STATUSBAR_CLOCK_CHIP,
@@ -54,7 +55,8 @@ public class RisingSettingsConstants {
         QS_TILE_VERTICAL_LAYOUT,
         LOCKSCREEN_WIDGETS_ENABLED,
         LOCKSCREEN_WIDGETS,
-        LOCKSCREEN_WIDGETS_EXTRAS
+        LOCKSCREEN_WIDGETS_EXTRAS,
+        QS_WIDGETS_ENABLED
     };
     
     public static final String[] SECURE_SETTINGS_KEYS = {
