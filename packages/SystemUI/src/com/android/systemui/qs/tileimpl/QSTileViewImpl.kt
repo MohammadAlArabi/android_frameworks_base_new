@@ -179,7 +179,7 @@ constructor(
 
     // QS Style 2
     private val colorActiveAlpha = Utils.applyAlpha(ACTIVE_ALPHA, Utils.getColorAttrDefaultColor(context, R.attr.shadeActive))
-    private val colorInactiveAlpha = resources.getColor(R.color.qs_translucent_bg)
+    private val colorInactiveAlpha = Utils.applyAlpha(0.8f, colorInactive)
 
     // QS Style 3
     private var randomColor: Random = Random()
