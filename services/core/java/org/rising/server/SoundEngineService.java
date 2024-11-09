@@ -53,7 +53,7 @@ public final class SoundEngineService extends SystemService {
         mAudioEffectsUtils = new AudioEffectsUtils(mContext);
         mSettingsObserver = new SettingsObserver(null);
         mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        mAudioHandler = new Handler(mContext.getMainLooper());
+        mAudioHandler = new Handler();
     }
 
     @Override
