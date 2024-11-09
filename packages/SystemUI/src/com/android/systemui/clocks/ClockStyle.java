@@ -41,7 +41,7 @@ public class ClockStyle extends RelativeLayout implements TunerService.Tunable {
             0,
             R.layout.keyguard_clock_oos,
             R.layout.keyguard_clock_center,
-            R.layout.keyguard_clock_big_clock_centered,
+            R.layout.keyguard_clock_simple,
             R.layout.keyguard_clock_miui,
             R.layout.keyguard_clock_ide
     };
