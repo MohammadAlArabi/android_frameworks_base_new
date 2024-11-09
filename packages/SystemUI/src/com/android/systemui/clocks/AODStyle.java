@@ -178,7 +178,7 @@ public class AODStyle extends RelativeLayout implements TunerService.Tunable {
             mAodImageView.animate()
                 .scaleX(0f)
                 .scaleY(0f)
-                .setDuration(500)
+                .setDuration(250)
                 .withEndAction(() -> {
                     mAodImageView.setVisibility(View.GONE);
                     stopBurnInProtection();
