@@ -298,4 +298,10 @@ public class UdfpsAnimation extends ImageView {
             removeAnimation();
         }
     }
+    
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeAnimation();
+    }
 }
