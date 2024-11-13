@@ -23,14 +23,9 @@ import static com.android.systemui.qs.dagger.QSScopeModule.QS_USING_MEDIA_PLAYER
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
-import android.os.Handler;
-import android.os.UserHandle;
-import android.provider.Settings;
-
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.UiEventLogger;
 import com.android.systemui.dump.DumpManager;
-import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.haptics.qs.QSLongPressEffect;
 import com.android.systemui.media.controls.domain.pipeline.interactor.MediaCarouselInteractor;
 import com.android.systemui.media.controls.ui.controller.MediaHierarchyManager;
@@ -45,7 +40,6 @@ import com.android.systemui.settings.brightness.BrightnessSliderController;
 import com.android.systemui.scene.shared.flag.SceneContainerFlag;
 import com.android.systemui.statusbar.policy.SplitShadeStateController;
 import com.android.systemui.util.leak.RotationUtils;
-import com.android.systemui.util.settings.SystemSettings;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.settings.brightness.BrightnessMirrorHandler;
 import com.android.systemui.settings.brightness.MirrorController;
@@ -90,14 +84,12 @@ public class QuickQSPanelController extends QSPanelControllerBase<QuickQSPanel> 
             DumpManager dumpManager, SplitShadeStateController splitShadeStateController,
             Provider<QSLongPressEffect> longPressEffectProvider,
             MediaCarouselInteractor mediaCarouselInteractor,
-            @Main Handler mainHandler,
-            SystemSettings systemSettings,
             BrightnessController.Factory brightnessControllerFactory,
             BrightnessSliderController.Factory brightnessSliderFactory
     ) {
         super(view, qsHost, qsCustomizerController, usingMediaPlayer, mediaHost, metricsLogger,
                 uiEventLogger, qsLogger, dumpManager, splitShadeStateController,
-                longPressEffectProvider, mainHandler, systemSettings);
+                longPressEffectProvider);
         mUsingCollapsedLandscapeMediaProvider = usingCollapsedLandscapeMediaProvider;
         mMediaCarouselInteractor = mediaCarouselInteractor;
         mTunerService = tunerService;
