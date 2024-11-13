@@ -2051,7 +2051,9 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
     
     private void boostFramesDuringRelayout() {
         boostFrames();
-        this.mView.requestLayout();
+        mView.postOnAnimation(() -> {
+            this.mView.requestLayout();
+        });
         boostFrames();
     }
 
@@ -4016,7 +4018,9 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
         if (!expand) {
             setClosing(true);
         }
-        flingToHeight(vel, expand, target, collapseSpeedUpFactor, expandBecauseOfFalsing);
+        mView.postOnAnimation(() -> {
+            flingToHeight(vel, expand, target, collapseSpeedUpFactor, expandBecauseOfFalsing);
+        });
     }
 
     private void springBack() {
