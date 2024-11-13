@@ -147,11 +147,6 @@ public class QSAnimator implements QSHost.Callback, PagedTileLayout.PageListener
     private int[] mTmpLoc1 = new int[2];
     private int[] mTmpLoc2 = new int[2];
 
-    private final Function1<Boolean, Unit> mMediaHostVisibilityListener = (visible) -> {
-        requestAnimatorUpdate();
-        return null;
-    };
-
     @Inject
     public QSAnimator(@RootView View rootView, QuickQSPanel quickPanel,
             QSPanelController qsPanelController,
@@ -225,13 +220,11 @@ public class QSAnimator implements QSHost.Callback, PagedTileLayout.PageListener
     public void onViewAttachedToWindow(@NonNull View view) {
         updateAnimators();
         setCurrentPosition();
-        mQuickQSPanelController.mMediaHost.addVisibilityChangeListener(mMediaHostVisibilityListener);
     }
 
     @Override
     public void onViewDetachedFromWindow(@NonNull View v) {
         mHost.removeCallback(this);
-        mQuickQSPanelController.mMediaHost.removeVisibilityChangeListener(mMediaHostVisibilityListener);
     }
 
     private void addNonFirstPageAnimators(int page) {
