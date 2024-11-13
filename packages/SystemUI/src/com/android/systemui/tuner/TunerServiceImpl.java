@@ -506,7 +506,7 @@ public class TunerServiceImpl extends TunerService {
 
     private class Observer extends ContentObserver {
         public Observer() {
-            super(new Handler(Looper.getMainLooper()));
+            super(null);
         }
 
         @Override
@@ -515,7 +515,9 @@ public class TunerServiceImpl extends TunerService {
             for (Uri u : uris) {
                 String key = mListeningUris.get(u);
                 if (userId == mUserTracker.getUserId() || isLineageGlobal(key)) {
-                    reloadSetting(u);
+                    mMainHandler.post(() -> {
+                        reloadSetting(u);
+                    });
                 }
             }
         }
